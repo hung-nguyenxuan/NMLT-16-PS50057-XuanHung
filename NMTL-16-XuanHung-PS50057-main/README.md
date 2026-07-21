@@ -1,1 +1,1 @@
-echo "# NMTL-NguyenXuanHung-main" >> README.md git init git add README.md git commit -m "first commit" git branch -M main git remote add origin(https://github.com/hung-nguyenxuan/NMTL-NguyenXuanHung-PS50057-main/tree/main/NMTL-NguyenXuanHung-16-PS50057) git push -u origin main
+echo "# NMTL-16-XuanHung-main" >> README.md git init git add README.md git commit -m "first commit" git branch -M main git remote add origin(https://github.com/hung-nguyenxuan/NMLT-16-PS50057-XuanHung) git push -u origin main
