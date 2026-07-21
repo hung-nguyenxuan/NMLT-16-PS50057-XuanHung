@@ -1,10 +1,11 @@
 #include <stdio.h>
-int main(){
+int main()
+{
     int chon;
     do
     {
         printf("+-------------------------------+\n");
-        printf("|  MUNU CHƯƠNG TRÌNH LAB 3.     |\n");
+        printf("|  MENU CHUONG TRINH LAB 3.     |\n");
         printf("+-------------------------------+\n");
         printf("| 0. Thoat chuong trinh.        |\n");
         printf("| 1. Tinh hoc luc sinh vien     |\n");
