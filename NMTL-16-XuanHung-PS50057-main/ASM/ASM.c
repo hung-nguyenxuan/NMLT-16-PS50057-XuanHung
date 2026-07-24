@@ -10,7 +10,7 @@ int main()
     do
     {
         printf("+---------------------------------------------------+\n");
-        printf("|           MENU CHUONG TRINH LAB 3.                |\n");
+        printf("|           MENU CHUONG TRINH ASM.                  |\n");
         printf("+---------------------------------------------------+\n");
         printf("|           1. Kiem tra so nguyen                   |\n");
         printf("|           2. Tim uoc chung va boi chung cua 2 so  |\n");
@@ -21,7 +21,7 @@ int main()
         printf("|           7. Chuong trinh vay tien mua xe         |\n");
         printf("|           8. sap xep thong tin sinh vien          |\n");
         printf("|           9. Xay dung game FPOLY-LOTT             |\n");
-        printf("|           10. Thoat chuong trinh                  |\n");
+        printf("|           10.Thoat chuong trinh                   |\n");
         printf("+---------------------------------------------------+\n");
         printf("Ban hay chon chuc nang (0 - 10): ");
         scanf("%d",&chon);
