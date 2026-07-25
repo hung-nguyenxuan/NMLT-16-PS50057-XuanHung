@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-
+// Tính trung bình tổng các số chia hết cho 2 trong khoảng từ min đến max
 void TinhTrungBinh()
 {
     int min, max;
@@ -33,6 +33,57 @@ void TinhTrungBinh()
     }
 
 }
+//kiểm tra số nguyên tố
+void KiemTraSoNguyenTo()
+{
+    float x;
+    printf("Nhap vao mot so bat ky: ");
+    scanf("%f", &x);
+
+    if (x == (int)x) {
+        printf("\n=> %g la so nguyen.\n", x);
+        int n = (int)x;
+
+        int isPrime = 1; 
+        if (n < 2) {
+            isPrime = 0; 
+        } else {
+            for (int i = 2; i <= sqrt(n); i++) {
+                if (n % i == 0) {
+                    isPrime = 0; 
+                    break;
+                }
+            }
+        }
+        
+        if (isPrime == 1) {
+            printf("=> %d la so nguyen to.\n", n);
+        } 
+        else {
+            printf("=> %d khong phai la so nguyen to.\n", n);
+        }
+    }
+}
+//số chính phương
+void kiemTraSoChinhPhuong() {
+    int n;
+    printf("--- KIEM TRA SO CHINH PHUONG ---\n");
+    printf("Nhap vao mot so nguyen n: ");
+    scanf("%d", &n);
+
+    if (n < 0) {
+        printf("=> %d khong phai la so chinh phuong.\n", n);
+        return; 
+    }
+
+    int sqr = sqrt(n);
+
+    if (sqr * sqr == n) {
+        printf("=> %d la so chinh phuong.\n", n);
+    } else {
+        printf("=> %d khong phai la so chinh phuong.\n", n);
+    }
+}
 int main()
 {
     int chon;
@@ -56,11 +107,11 @@ int main()
                 break;
             case 2:
                 printf("Kiem tra so nguyen to.\n");
-               
+                KiemTraSoNguyenTo();
                 break;
             case 3:
                 printf("Kiem tra so chinh phuong.\n");
-             
+                kiemTraSoChinhPhuong();
                 break;
             case 4:
                 printf("Thoat chuong trinh.\n");
