@@ -2,8 +2,35 @@
 #include <math.h>
 void KiemTraSoNguyen()
 {
-    float x;
+     float x;
+    printf("Nhap vao mot so bat ky: ");
+    scanf("%f", &x);
+
+    if (x == (int)x) {
+        printf("\n=> %g la so nguyen.\n", x);
+        int n = (int)x;
+
+        int isPrime = 1; 
+        if (n < 2) {
+            isPrime = 0; 
+        } else {
+            for (int i = 2; i <= sqrt(n); i++) {
+                if (n % i == 0) {
+                    isPrime = 0; 
+                    break;
+                }
+            }
+        }
+        
+        if (isPrime == 1) {
+            printf("=> %d la so nguyen to.\n", n);
+        } 
+        else {
+            printf("=> %d khong phai la so nguyen to.\n", n);
+        }
+    }
 }
+
 int main()
 {
     int chon;
@@ -33,35 +60,27 @@ int main()
                 break;
             case 2:
                 printf("Tim uoc chung va boi chung cua 2 so.\n");   
-                TimUocVaBoiChung();
                 break;
             case 3:
                 printf("chuong trinh tinh tien karaoke.\n");
-                TinhTienKaraoke();
                 break;
             case 4:
                 printf("Tinh tien dien.\n");
-                TinhTienDien();
                 break;
             case 5:
                 printf("chuc nang doi tien.\n");
-                DoiTien();
                 break;
             case 6:
                 printf("Tinh lai suat nang hang.\n");
-                TinhLaiSuat();
                 break;
             case 7:
                 printf("Chuong trinh vay tien mua xe.\n");
-                VayTienMuaXe();
                 break;
             case 8:
                 printf("sap xep thong tin sinh vien.\n");
-                SapXepThongTinSinhVien();
                 break;
             case 9:
                 printf("Xay dung game FPOLY-LOTT.\n");
-                GameFPOLYLOTT();
                 break;
             case 10:
                 printf("Thoat chuong trinh.\n");
