@@ -2,7 +2,10 @@
 #include <math.h>
 #include <stdbool.h>
 //void chucnang1();
+//chuc nang 2: kiem tra nam nhuan
 void chucnang2();
+bool kiemtraNamNhuan(int nam);
+//void chucnang2(); het
 int main()
 {
     int chon;
@@ -11,28 +14,28 @@ int main()
         printf("+-----------------------------------------------+\n");
         printf("|  MENU CHUONG TRINH LAB 5.                     |\n");
         printf("+-----------------------------------------------+\n");
-        printf("| 1. Hàm Tìm giá trị lớn nhất trong 3 số        |\n");
-        printf("| 2. Hàm Kiểm tra Năm nhuận                     |\n");
-        printf("| 3. Hàm Hoán vị 2 số sử dụng Con trỏ           |\n");
-        printf("| 4. Hàm Kiểm tra & Phân loại Tam giác          |\n");
-        printf("| 5. Thoát chương trình                         |\n");
+        printf("| 1. Ham Tim gia tri lon nhat trong 3 so        |\n");
+        printf("| 2. Ham Kiem tra Nam nhuan                     |\n");
+        printf("| 3. Ham Hoan vi 2 so su dung Con tro           |\n");
+        printf("| 4. Ham Kiem tra & Phan loai Tam giac          |\n");
+        printf("| 5. Thoat chuong trinh                         |\n");
         printf("+-----------------------------------------------+\n");
         printf("Ban hay chon chuc nang (1 - 5): ");
         scanf("%d",&chon);
         switch (chon)
         {
             case 1:
-                printf("Hàm Tìm giá trị lớn nhất.\n");
+                printf("Ham Tim gia tri lon nhat.\n");
                 break;
             case 2:
-                printf("Hàm Kiểm tra Năm nhuận.\n");
+                printf("Ham Kiem tra Nam nhuan.\n");
                 chucnang2();
                 break;
             case 3:
-                printf("Hàm Hoán vị 2 số sử dụng Con trỏ.\n");
+                printf("Ham Hoan vi 2 so su dung Con tro.\n");
                 break;
             case 4:
-                printf("Hàm Kiểm tra & Phân loại Tam giác.\n");
+                printf("Ham Kiem tra & Phan loai Tam giac.\n");
                 break;
             case 5:
                 printf("Thoat chuong trinh.\n");
@@ -46,7 +49,7 @@ int main()
     return 0;
 }
 
-//chức năng 2: kiểm tra năm nhuậnq
+//chuc nang 2: kiem tra nam nhuan
 void chucnang2()
 {
     int nam;
@@ -72,6 +75,4 @@ bool kiemtraNamNhuan(int nam)
         return false;
     }
 }
-//kết thức chức năng 2
-
-
+//ket thuc chuc nang 2
