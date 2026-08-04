@@ -1,27 +1,11 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdbool.h>
+//chức năng 1
 void chucnang1();
-
-float tinhTrungBinh(int a[], int n){
-    int tong = 0;
-    int sodem = 0;
-    for(int i = 0; i < n; i++){
-        if(a[i] % 3 == 0 && a[i] % 5 == 0)
-        {
-            tong += a[i];
-            sodem++;
-        }
-    }
-    if(sodem == 0)
-    {
-        return -__FLT_MAX__; // số nhỏ nhất kiểu float
-    }
-    else
-    {
-        return (float)tong / sodem;
-    }
-}
+void chucnang2();
+void chucnang3();
+void chucnang4();
 
 int main()
 {
@@ -49,12 +33,15 @@ int main()
                 break;
             case 2:
                 printf("Tim gia tri lon nhat va nho nhat trong mang.\n");
+                chucnang2();
                 break;
             case 3:
                 printf("Sap xep mang theo thu tu giam dan.\n");
+                chucnang3();
                 break;
             case 4:
                 printf("Ma tran binh phuong (mang 2 chieu).\n");
+                chucnang4();
                 break;
             case 5:
                 printf("Loc va xuat vi tri cac so le trong ma tran.\n");
@@ -71,6 +58,26 @@ int main()
     while (chon != 6);
 
     return 0;
+}
+float tinhTrungBinh(int a[], int n)
+{
+    int tong = 0;
+    int sodem = 0;
+    for(int i = 0; i < n; i++){
+        if(a[i] % 3 == 0 && a[i] % 5 == 0)
+        {
+            tong += a[i];
+            sodem++;
+        }
+    }
+    if(sodem == 0)
+    {
+        return -__FLT_MAX__; // số nhỏ nhất kiểu float
+    }
+    else
+    {
+        return (float)tong / sodem;
+    }
 }
 
 void chucnang1()
@@ -95,3 +102,111 @@ void chucnang1()
     }
 }
 
+// xg chức năng 1
+void timMaxMin(int a[], int n)
+{
+    int min,max;
+    min = a[0];
+    max = a[0];
+    for(int i = 1; i < n; i++)
+    {
+        if (min > a[i])
+        {
+            min = a[i];
+        }
+        if (max < a[i])
+        {
+            max = a[i];
+        }
+    }
+    printf("Gia tri nho nhat trong mang la: %d\n", min);
+    printf("Gia tri lon nhat trong mang la: %d\n", max);
+    
+}
+void chucnang2()
+{
+    int n = 5;
+    int a[10];
+    printf("Nhap 5 so nguyen:\n");
+    scanf("%d",&n);
+    for(int i = 0; i < n; i++)
+    {
+        printf("Nhap a[%d] = ", i);
+        scanf("%d", &a[i]);
+    }
+    timMaxMin(a, n);
+}
+//xog chức năng 2
+
+//chức năng 3
+void swap(int *a, int *b)
+{
+    int temp = *a;
+    *a = *b;
+    *b = temp;
+}
+void sapXepGiamDan(int a[], int n)
+{
+    for(int i = 0; i < n - 1; i++)
+    {
+        for(int j = i + 1; j < n; j++)
+        {
+            if(a[i] < a[j])
+            {
+                swap(&a[i], &a[j]);
+            }
+        }
+    }
+    for(int i = 0; i < n; i++)
+    {
+        printf("%d \n", a[i]);
+    }
+}
+void chucnang3()
+{
+    int n = 5;
+    int a[10];
+    printf("Nhap 5 so nguyen:\n");
+    scanf("%d",&n);
+    for(int i = 0; i < n; i++)
+    {
+        printf("Nhap a[%d] = ", i);
+        scanf("%d", &a[i]);
+    }
+    printf("\n");
+    sapXepGiamDan(a, n);    
+}
+// xog chức năng 3
+//chuc năng 4
+void maTranBinhPhuong(int row, int col)
+{
+    int a[row][col];
+    //nhap
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j < col; j++)
+        {
+            printf("Nhap a[%d][%d] = ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+    //xuat
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j < col; j++)
+        {
+            printf("%3d \t", a[i][j] * a[i][j]);
+        }
+        printf("\n");
+    }
+} 
+void chucnang4()
+{
+    int row, col;
+    printf("Nhap so hang: ");
+    scanf("%d", &row);
+    printf("Nhap so cot: ");
+    scanf("%d", &col);
+    maTranBinhPhuong(row, col);
+}
+//xog chức năng 4
