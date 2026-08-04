@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <math.h>
 #include <stdbool.h>
-//chức năng 1
+//khai báo các hàm chức năng
 void chucnang1();
 void chucnang2();
 void chucnang3();
@@ -59,6 +59,9 @@ int main()
 
     return 0;
 }
+
+//chức năng và hàm 
+
 float tinhTrungBinh(int a[], int n)
 {
     int tong = 0;
