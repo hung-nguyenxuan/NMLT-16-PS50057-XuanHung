@@ -6,6 +6,7 @@ void chucnang1();
 void chucnang2();
 void chucnang3();
 void chucnang4();
+void chucnang5();
 
 int main()
 {
@@ -45,6 +46,7 @@ int main()
                 break;
             case 5:
                 printf("Loc va xuat vi tri cac so le trong ma tran.\n");
+                chucnang5();
                 break;
             case 6:
                 printf("Thoat chuong trinh.\n");
@@ -213,3 +215,40 @@ void chucnang4()
     maTranBinhPhuong(row, col);
 }
 //xog chức năng 4
+
+//chức năng 5
+void xuatSoLeMaTran(int row, int col)
+{
+    int a[row][col];
+    //nhap
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j < col; j++)
+        {
+            printf("Nhap a[%d][%d] = ", i, j);
+            scanf("%d", &a[i][j]);
+        }
+    }
+    //xuat vi tri so le
+    printf("Vi tri cac so le trong ma tran:\n");
+    for(int i = 0; i < row; i++)
+    {
+        for(int j = 0; j < col; j++)
+        {
+            if(a[i][j] % 2 != 0)
+            {
+                printf("a[%d][%d] = %d\n", i, j, a[i][j]);
+            }
+        }
+    }
+}
+void chucnang5()
+{
+    int row, col;
+    printf("Nhap so hang: ");
+    scanf("%d", &row);
+    printf("Nhap so cot: ");
+    scanf("%d", &col);
+    xuatSoLeMaTran(row, col);
+}
+//xog chức năng 5 
