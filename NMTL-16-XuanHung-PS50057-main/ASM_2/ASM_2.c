@@ -3,13 +3,113 @@
 #include <stdlib.h>
 #include <time.h>
 #include <string.h>
+#include <ctype.h>
+#include <stdbool.h>
 
-// Chuc nang 1: Kiem tra so nguyen
-void KiemTraSoNguyen()
+// Struct quan ly sinh vien
+struct SinhVien {
+    char ten[50];
+    float diem;
+    char hocLuc[20];
+};
+
+//khai báo các hàm chức năng
+void kiemTraSoNguyen();
+void timUocChungBoiChung();
+void tinhTienKaraoke();
+void tinhTienDien();
+void chucNangDoiTien();
+void tinhLaiSuatNganHang();
+void vayTienMuaXe();
+void sapXepThongTinSinhVien();
+void xayDungGameFPOLYLOTT();
+
+int main()
+{
+    int chon;
+    do
+    {
+        printf("+---------------------------------------------------+\n");
+        printf("|             MENU CHUONG TRINH ASM 2               |\n");
+        printf("+---------------------------------------------------+\n");
+        printf("| 1. Kiem tra so nguyen                             |\n");
+        printf("| 2. Tim uoc chung va boi chung cua 2 so            |\n");
+        printf("| 3. Chuong trinh tinh tien karaoke                 |\n");
+        printf("| 4. Tinh tien dien                                 |\n");
+        printf("| 5. Chuc nang doi tien                             |\n");
+        printf("| 6. Tinh lai suat ngan hang                        |\n");
+        printf("| 7. Chuong trinh vay tien mua xe                   |\n");
+        printf("| 8. Sap xep thong tin sinh vien                    |\n");
+        printf("| 9. Xay dung game FPOLY-LOTT                       |\n");
+        printf("| 10. Thoat chuong trinh                            |\n");
+        printf("+---------------------------------------------------+\n");
+        printf(">> Xin moi chon chuc nang (1-10): ");
+        scanf("%d", &chon);
+        
+        // Loai bo ky tu xuong dong sau khi dung scanf
+        while(getchar() != '\n');
+
+        switch (chon)
+        {
+            case 1:
+                printf("Kiem tra so nguyen.\n");
+                kiemTraSoNguyen();
+                break;
+            case 2:
+                printf("Tim uoc chung va boi chung cua 2 so.\n");
+                timUocChungBoiChung();
+                break;
+            case 3:
+                printf("Chuong trinh tinh tien karaoke.\n");
+                tinhTienKaraoke();
+                break;
+            case 4:
+                printf("Tinh tien dien.\n");
+                tinhTienDien();
+                break;
+            case 5:
+                printf("Chuc nang doi tien.\n");
+                chucNangDoiTien();
+                break;
+            case 6:
+                printf("Tinh lai suat ngan hang.\n");
+                tinhLaiSuatNganHang();
+                break;
+            case 7:
+                printf("Chuong trinh vay tien mua xe.\n");
+                vayTienMuaXe();
+                break;
+            case 8:
+                printf("Sap xep thong tin sinh vien.\n");
+                sapXepThongTinSinhVien();
+                break;
+            case 9:
+                printf("Xay dung game FPOLY-LOTT.\n");
+                xayDungGameFPOLYLOTT();
+                break;
+            case 10:
+                printf("Thoat chuong trinh.\n");
+                break;
+            default:
+                printf("Loi: Chuc nang khong hop le.\n");
+                printf("Ban hay chon tu 1 - 10.\n");
+                break;
+        }
+    }
+    while (chon != 10);
+
+    return 0;
+}
+
+//chức năng và hàm 
+
+// chức năng 1
+void kiemTraSoNguyen()
 {
     float x;
     printf("Nhap vao mot so bat ky: ");
     scanf("%f", &x);
+    while(getchar() != '\n');
 
     if (x == (int)x) {
         printf("\n=> %g la so nguyen.\n", x);
@@ -37,14 +137,17 @@ void KiemTraSoNguyen()
         printf("\n=> %g khong phai la so nguyen.\n", x);
     }
 }
+// xg chức năng 1
 
-// Chuc nang 2: Tim uoc chung va boi chung cua 2 so
-void TimUocChungBoiChung() {
+// chức năng 2
+void timUocChungBoiChung()
+{
     int a, b;
     printf("Nhap vao so thu nhat (nguyen duong): ");
     scanf("%d", &a);
     printf("Nhap vao so thu hai (nguyen duong): ");
     scanf("%d", &b);
+    while(getchar() != '\n');
     
     if(a <= 0 || b <= 0) {
         printf("Vui long nhap so nguyen duong!\n");
@@ -61,14 +164,17 @@ void TimUocChungBoiChung() {
     printf("\n=> Uoc chung lon nhat cua %d va %d la: %d\n", a, b, ucln);
     printf("=> Boi chung nho nhat cua %d va %d la: %d\n", a, b, bcnn);
 }
+// xog chức năng 2
 
-// Chuc nang 3: Chuong trinh tinh tien karaoke
-void TinhTienKaraoke() {
+// chức năng 3
+void tinhTienKaraoke()
+{
     int gioBatDau, gioKetThuc;
     printf("Nhap gio bat dau (12-23): ");
     scanf("%d", &gioBatDau);
     printf("Nhap gio ket thuc (12-23): ");
     scanf("%d", &gioKetThuc);
+    while(getchar() != '\n');
     
     if (gioBatDau < 12 || gioBatDau > 23 || gioKetThuc < 12 || gioKetThuc > 23 || gioBatDau >= gioKetThuc) {
         printf("\n=> Gio nhap khong hop le! Vui long nhap gio trong khoang 12 den 23 va gio bat dau < gio ket thuc.\n");
@@ -94,12 +200,15 @@ void TinhTienKaraoke() {
     printf("\n=> Tong thoi gian hat: %d gio\n", soGio);
     printf("=> So tien khach phai tra la: %.0f VNĐ\n", tongTien);
 }
+// xog chức năng 3
 
-// Chuc nang 4: Tinh tien dien
-void TinhTienDien() {
+// chức năng 4
+void tinhTienDien()
+{
     float kwh;
     printf("Nhap vao so dien (kWh) da tieu thu: ");
     scanf("%f", &kwh);
+    while(getchar() != '\n');
     
     if (kwh < 0) {
         printf("\n=> So dien khong hop le!\n");
@@ -125,12 +234,15 @@ void TinhTienDien() {
     printf("=> So tien dien (chua VAT): %.0f VNĐ\n", tienDien);
     printf("=> Tong tien phai tra (gom 8%% VAT): %.0f VNĐ\n", tienDien * 1.08);
 }
+// xog chức năng 4
 
-// Chuc nang 5: Chuc nang doi tien
-void ChucNangDoiTien() {
+// chức năng 5
+void chucNangDoiTien()
+{
     int soTien;
     printf("Nhap so tien can doi (don vi: VNĐ): ");
     scanf("%d", &soTien);
+    while(getchar() != '\n');
     
     if(soTien < 1000) {
         printf("\n=> So tien phai tu 1000 VNĐ tro len.\n");
@@ -153,12 +265,15 @@ void ChucNangDoiTien() {
         printf("- Con du %d VNĐ le khong the doi do khong co menh gia phu hop!\n", soTien);
     }
 }
+// xog chức năng 5
 
-// Chuc nang 6: Tinh lai suat nang hang
-void TinhLaiSuatNganHang() {
+// chức năng 6
+void tinhLaiSuatNganHang()
+{
     float tienVay;
     printf("Nhap so tien muon vay (VNĐ): ");
     scanf("%f", &tienVay);
+    while(getchar() != '\n');
     
     if (tienVay <= 0) {
         printf("\n=> So tien vay khong hop le.\n");
@@ -176,15 +291,17 @@ void TinhLaiSuatNganHang() {
         tienLai = tienVay * 0.05; 
         tienPhaiTraHangThang = tienGocTraHangThang + tienLai;
         tienVay -= tienGocTraHangThang;
-        if (tienVay < 1) tienVay = 0; // Tránh sai số thập phân hiển thị
+        if (tienVay < 1) tienVay = 0;
         
         printf("%d\t%.0f\t\t%.0f\t\t%.0f\t\t\t%.0f\n", 
             i, tienLai, tienGocTraHangThang, tienPhaiTraHangThang, tienVay);
     }
 }
+// xog chức năng 6
 
-// Chuc nang 7: Chuong trinh vay tien mua xe
-void VayTienMuaXe() {
+// chức năng 7
+void vayTienMuaXe()
+{
     float giaXe = 50000000;
     float phanTramTraTruoc;
     
@@ -192,6 +309,7 @@ void VayTienMuaXe() {
     printf("Gia tri xe mac dinh: %.0f VNĐ\n", giaXe);
     printf("Ban co the tra truoc bao nhieu phan tram (0-100)?: ");
     scanf("%f", &phanTramTraTruoc);
+    while(getchar() != '\n');
     
     if (phanTramTraTruoc < 0 || phanTramTraTruoc > 100) {
         printf("\n=> Phan tram khong hop le!\n");
@@ -226,18 +344,16 @@ void VayTienMuaXe() {
             i, tienLai, tienGocHangThang, tienPhaiTra, tienVay);
     }
 }
+// xog chức năng 7
 
-// Chuc nang 8: Sap xep thong tin sinh vien
-struct SinhVien {
-    char ten[50];
-    float diem;
-    char hocLuc[20];
-};
-
-void SapXepThongTinSinhVien() {
+// chức năng 8
+void sapXepThongTinSinhVien()
+{
     int n;
     printf("Nhap so luong sinh vien: ");
     scanf("%d", &n);
+    while(getchar() != '\n');
+    
     if(n <= 0) {
         printf("\n=> So luong sinh vien khong hop le!\n");
         return;
@@ -248,10 +364,12 @@ void SapXepThongTinSinhVien() {
     for (int i = 0; i < n; i++) {
         printf("\nNhap thong tin sinh vien thu %d:\n", i + 1);
         printf("Ten sinh vien: ");
-        scanf(" %[^\n]", sv[i].ten); // Doc chuoi co chua dau cach
+        fgets(sv[i].ten, sizeof(sv[i].ten), stdin);
+        sv[i].ten[strcspn(sv[i].ten, "\n")] = '\0';
         
         printf("Diem sinh vien: ");
         scanf("%f", &sv[i].diem);
+        while(getchar() != '\n');
         
         // Phan loai hoc luc
         if (sv[i].diem >= 9) strcpy(sv[i].hocLuc, "Xuat sac");
@@ -277,15 +395,18 @@ void SapXepThongTinSinhVien() {
         printf("Ten: %-20s | Diem: %-5.1f | Hoc luc: %s\n", sv[i].ten, sv[i].diem, sv[i].hocLuc);
     }
 }
+// xog chức năng 8
 
-// Chuc nang 9: Xay dung game FPOLY-LOTT
-void XayDungGameFPOLYLOTT() {
+// chức năng 9
+void xayDungGameFPOLYLOTT()
+{
     int so1, so2;
     printf("\n=== CHAO MUNG DEN VOI FPOLY-LOTT ===\n");
     printf("Nhap vao so thu nhat (1-15): ");
     scanf("%d", &so1);
     printf("Nhap vao so thu hai (1-15): ");
     scanf("%d", &so2);
+    while(getchar() != '\n');
     
     if (so1 < 1 || so1 > 15 || so2 < 1 || so2 > 15) {
         printf("\n=> So ban nhap khong nam trong khoang 1-15!\n");
@@ -317,77 +438,4 @@ void XayDungGameFPOLYLOTT() {
         printf("\n=> Rat tiec, ban da khong trung thuong. Chuc ban may man lan sau!\n");
     }
 }
-
-int main()
-{
-    int chon;
-    do
-    {
-        printf("\n+---------------------------------------------------+\n");
-        printf("|           MENU CHUONG TRINH ASM.                  |\n");
-        printf("+---------------------------------------------------+\n");
-        printf("|           1. Kiem tra so nguyen                   |\n");
-        printf("|           2. Tim uoc chung va boi chung cua 2 so  |\n");
-        printf("|           3. Chuong trinh tinh tien karaoke       |\n");
-        printf("|           4. Tinh tien dien                       |\n");
-        printf("|           5. Chuc nang doi tien                   |\n");
-        printf("|           6. Tinh lai suat nang hang              |\n");
-        printf("|           7. Chuong trinh vay tien mua xe         |\n");
-        printf("|           8. Sap xep thong tin sinh vien          |\n");
-        printf("|           9. Xay dung game FPOLY-LOTT             |\n");
-        printf("|           10. Thoat chuong trinh                  |\n");
-        printf("+---------------------------------------------------+\n");
-        printf("Ban hay chon chuc nang (0 hoac 10 de thoat): ");
-        scanf("%d",&chon);
-        
-        switch (chon)
-        {
-            case 1:
-                printf("\n--- KIEM TRA SO NGUYEN ---\n");
-                KiemTraSoNguyen();
-                break;
-            case 2:
-                printf("\n--- TIM UCLN VA BCNN ---\n");   
-                TimUocChungBoiChung();
-                break;
-            case 3:
-                printf("\n--- TINH TIEN KARAOKE ---\n");
-                TinhTienKaraoke();
-                break;
-            case 4:
-                printf("\n--- TINH TIEN DIEN ---\n");
-                TinhTienDien();
-                break;
-            case 5:
-                printf("\n--- CHUC NANG DOI TIEN ---\n");
-                ChucNangDoiTien();
-                break;
-            case 6:
-                printf("\n--- TINH LAI SUAT NGAN HANG ---\n");
-                TinhLaiSuatNganHang();
-                break;
-            case 7:
-                printf("\n--- VAY TIEN MUA XE ---\n");
-                VayTienMuaXe();
-                break;
-            case 8:
-                printf("\n--- SAP XEP THONG TIN SINH VIEN ---\n");
-                SapXepThongTinSinhVien();
-                break;
-            case 9:
-                printf("\n--- GAME FPOLY-LOTT ---\n");
-                XayDungGameFPOLYLOTT();
-                break;
-            case 10:
-            case 0:
-                printf("\nCam on ban da su dung chuong trinh! Thoat...\n");
-                chon = 0; // Đảm bảo điều kiện dừng vòng lặp
-                break;
-            default:
-                printf("\nBan hay chon chuc nang tu 0 den 10.\n");
-                break;
-        }
-    } while (chon != 0);
-    
-    return 0;
-}
+// xog chức năng 9
